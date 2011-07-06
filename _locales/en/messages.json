@@ -1,0 +1,42 @@
+{
+  "locale": {
+    "message": "en"
+  },
+  "ext_name": {
+    "message": "Palette for Chrome"
+  },
+  "ext_description": {
+    "message": "Creates a color palette from any image. Just right-click on the image and select the 'Palette for Chrome' option."
+  },
+
+  "menu_palette": {
+    "message": "Create palette from image"
+  },
+  "menu_palette_16": {
+    "message": "Create 16-color palette"
+  },
+  "menu_palette_24": {
+    "message": "Create 24-color palette"
+  },
+  "menu_palette_32": {
+    "message": "Create 32-color palette"
+  },
+  "menu_palette_custom": {
+    "message": "Create custom palette..."
+  },
+
+  "msg_size": {
+    "message": "Palette size"
+  },
+
+  "msg_waiting": {
+    "message": "Waiting..."
+  },
+  "msg_loading": {
+    "message": "Quantizing vectors..."
+  },
+  "msg_loaded": {
+    "message": "Finished!"
+  }
+}
+

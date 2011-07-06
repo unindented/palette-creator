@@ -1,0 +1,196 @@
+/******************************************************************************
+ *
+ * Styles for the Palette for Chrome extension.
+ *
+ ******************************************************************************/
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Daniel';
+  src: local('☺'), url('daniel.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+/******************************************************************************/
+
+/* Global styles */
+
+body {
+  background: #fff;
+  color: #000;
+  font: normal 14px/1.5 'Lucida Grande', 'Lucida Sans', 'Helvetica', 'Arial', sans-serif;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/******************************************************************************/
+
+/* Content wrapper */
+
+#wrapper {
+  margin: 0 auto;
+  padding: 2em 0 3em 0;
+
+  display: block;
+  max-width: 580px;
+}
+
+/******************************************************************************/
+
+/* Stuff for center-aligning a float */
+
+.container {
+  overflow: hidden;
+  width: 100%;
+}
+.align {
+  float: left;
+  position: relative;
+}
+.left {
+  left: 50%;
+}
+.right {
+  right: 50%;
+}
+
+/******************************************************************************/
+
+/* Image with polaroid effect */
+
+#frame {
+  -webkit-box-shadow: rgba(0,0,0,.25) 0 .15em 1em;
+  font-family: 'Daniel', 'Lucida Grande', 'Lucida Sans', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.35em;
+  margin: 2.5em 0;
+  padding: 1em 1em .75em 1em;
+  text-align: center;
+
+  display: block;
+
+  /*-webkit-transform: rotate(-10deg);*/
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+}
+#frame:hover {
+  -webkit-transform: rotate(0deg) !important;
+}
+#frame:after {
+  content: attr(title);
+}
+
+#image {
+  margin: 0 auto 1em auto;
+
+  display: block;
+  max-width: 360px;
+  max-height: 240px;
+}
+
+/* Color palette */
+
+#colors {
+  background-color: #fff;
+  -webkit-border-radius: 1em;
+  -webkit-box-shadow: rgba(0,0,0,.25) 0 .15em 1em;
+  overflow: auto;
+  margin-top: 2em;
+  padding: 2em 1em 1em 1em;
+
+  display: block;
+}
+
+#colors .loader {
+  text-align: center;
+}
+
+#colors .color {
+  float: left;
+  width: 25%;
+}
+#colors .color .strip {
+  margin: 0 .75em;
+  padding: 1em 0;
+}
+#colors .color .info {
+  font-size: .75em;
+  margin: 0 1em;
+  padding: .5em 0;
+}
+
+/* Params dialog */
+
+#dialog {
+  background-color: rgba(0,0,0,.75);
+  display: table;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2147483647;
+
+  display: none;
+}
+.waiting #dialog {
+  display: table;
+}
+#dialog > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+#dialog > div > div {
+  background-color: rgba(255,255,255,.95);
+  -webkit-border-radius: 1em;
+  -webkit-box-shadow: rgba(0,0,0,.75) 0 .15em 1em;
+  display: block;
+  margin: 0 auto;
+  padding: 2.5em 2em 2em 2em;
+  text-align: center;
+  width: 360px;
+}
+
+#dialog label,
+#dialog span {
+  font-family: 'Daniel', 'Lucida Grande', 'Lucida Sans', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.35em;
+  line-height: 1.75em;
+}
+#dialog label:after {
+  content: ': ';
+}
+
+#dialog input[type='range'] {
+  display: block;
+  margin: 1em auto 2em auto;
+  width: 100%;
+}
+
+#dialog input[type='submit'] {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ccc));
+  border: 1px solid #999;
+  -webkit-border-radius: 1em;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font: 1em 'Lucida Grande', 'Lucida Sans', 'Helvetica', 'Arial', sans-serif;
+  padding: .6em 1em .5em 1em;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+}
+#dialog input[type='submit']:hover {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ccc));
+}
+#dialog input[type='submit']:active {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bbb), to(#ccc));
+}
+#dialog input[type='submit']:disabled {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ccc));
+  color: #999;
+  cursor: default;
+}
+
