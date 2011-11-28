@@ -170,8 +170,12 @@ getPixels = (image) ->
   context = canvas.getContext('2d')
   context.drawImage(image, 0, 0)
 
-  return context.getImageData(0, 0, canvas.width, canvas.height).data
+  olddata = context.getImageData(0, 0, canvas.width, canvas.height).data
 
+  newdata = []
+  newdata[i] = olddata[i] for i in [0...olddata.length]
+
+  return newdata
 
 showColors = (palette) ->
   fragment = document.createDocumentFragment()
