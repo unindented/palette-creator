@@ -34,12 +34,12 @@ rules =
       run(coffeeCmd, ->
         log.info("Compiled '#{sourceFile}' to '#{destFile}'")
         # ... and minify it.
-        #uglifyOpts = []
-        #uglifyOpts.push('--overwrite')
-        #uglifyCmd = "uglifyjs #{uglifyOpts.join(' ')} #{destFile}"
-        #run(uglifyCmd, ->
-        #  log.info("Minified '#{destFile}'")
-        #)
+        uglifyOpts = []
+        uglifyOpts.push('--overwrite')
+        uglifyCmd = "uglifyjs #{uglifyOpts.join(' ')} #{destFile}"
+        run(uglifyCmd, ->
+          log.info("Minified '#{destFile}'")
+        )
       )
   # JavaScript files.
   js:
