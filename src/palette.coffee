@@ -170,8 +170,9 @@ getPixels = (image) ->
   context = canvas.getContext('2d')
   context.drawImage(image, 0, 0)
 
+  # get pixel data from image
   olddata = context.getImageData(0, 0, canvas.width, canvas.height).data
-
+  # convert to plain array
   newdata = []
   newdata[i] = olddata[i] for i in [0...olddata.length]
 
