@@ -1,112 +1,130 @@
-fs            = require 'fs'
-path          = require 'path'
-{exec, spawn} = require 'child_process'
+require 'coffee-script'
 
-# Configuration.
-config = {
-  src: 'src',
-  dst: 'scripts'
-}
+fs   = require('fs')
+path = require('path')
+exec = require('child_process').exec
 
-################################################################################
+log  = require('./Cakefile.log')
+util = require('./Cakefile.util')
 
-# ANSI Terminal Colors.
-red   = '\033[0;31m'
-green = '\033[0;32m'
-reset = '\033[0m'
+### Configuration ##############################################################
 
-# Log a message with a color.
-log = (message, color, explanation) ->
-  puts("#{color}#{message}#{reset} #{explanation or ''}")
+config =
+  src:  'src'
+  dist: 'scripts'
 
-# Remove a file.
-remove = (afile) ->
-  log("Deleting #{afile}", green)
+### Build Rules ################################################################
 
-  fs.unlink(afile)
+rules =
+  # Files to ignore.
+  ignore:
+    regex: /^_/
+  # CoffeeScript files.
+  coffee:
+    regex: /\.coffee$/i
+    ext:   '.js'
+    make:  (sourceFile, destFile) ->
+      # Compile it...
+      [sourceDir, sourceBase, sourceExt] = util.extractPath(sourceFile)
+      coffeeOpts = []
+      coffeeOpts.push('--compile')
+      coffeeOpts.push('--print')
+      coffeeOpts.push('--bare') if sourceBase.match(/\.worker$/i)
+      coffeeCmd = "coffee #{coffeeOpts.join(' ')} #{sourceFile} > #{destFile}"
+      run(coffeeCmd, ->
+        log.info("Compiled '#{sourceFile}' to '#{destFile}'")
+        # ... and minify it.
+        #uglifyOpts = []
+        #uglifyOpts.push('--overwrite')
+        #uglifyCmd = "uglifyjs #{uglifyOpts.join(' ')} #{destFile}"
+        #run(uglifyCmd, ->
+        #  log.info("Minified '#{destFile}'")
+        #)
+      )
+  # JavaScript files.
+  js:
+    regex: /\.js$/i
+    ext:   '.js'
+    make:  (sourceFile, destFile) ->
+      # Minify it.
+      uglifyOpts = []
+      uglifyCmd = "uglifyjs #{uglifyOpts.join(' ')} #{sourceFile} > #{destFile}"
+      run(uglifyCmd, ->
+        log.info("Minified '#{sourceFile}' to '#{destFile}'")
+      )
+  # LESS files.
+  less:
+    regex: /\.less$/i
+    ext:   '.css'
+    make:  (sourceFile, destFile) ->
+      # Compile it.
+      lessOpts = []
+      lessOpts.push('--compress')
+      lessCmd = "lessc #{lessOpts.join(' ')} #{sourceFile} > #{destFile}"
+      run(lessCmd, ->
+        log.info("Compiled '#{sourceFile}' to '#{destFile}'")
+      )
+  # Other files.
+  other:
+    regex: /.*/
+    make:  (sourceFile, destFile) ->
+      # Just copy it.
+      copyCmd = "cp #{sourceFile} #{destFile}"
+      run(copyCmd, ->
+        log.info("Copied '#{sourceFile}' to '#{destFile}'")
+      )
 
-# Copy a file.
-copy = (srcfile, dstfolder) ->
-  log("Copying #{srcfile} to #{dstfolder}", green)
+# This function applies the above rules to the specified file.
+make = (sourceFile, destFile) ->
+  [sourceDir, sourceBase, sourceExt] = util.extractPath(sourceFile)
+  sourceFilename = sourceBase + sourceExt
 
-  exec("cp #{srcfile} #{dstfolder}", (err, stdout, stderr) ->
-    log(stderr, red) if err
+  for name, rule of rules
+    # If if matches the regex of the rule...
+    if sourceFilename.match(rule.regex)
+      # ... fix the extension...
+      destFile = util.fixExtension(destFile, rule.ext) if rule.ext?
+      # ... and execute the rule.
+      rule.make(sourceFile, destFile) if rule.make?
+      break
+
+# This function runs a command.
+run = (cmd, callback) ->
+  exec(cmd, (err, stdout, stderr) ->
+    log.info(stdout) if stdout
+    log.error(stderr) if stderr
+    #throw err if err?
+
+    callback() if callback? and not err?
   )
 
-# Extract the dirname, basename and extname from a path.
-extpath = (apath) ->
-  dirname = path.dirname(apath)
-  extname = path.extname(apath)
-  basename = path.basename(apath, extname)
-  [dirname, basename, extname]
+### Tasks ######################################################################
 
-# Compile a CoffeeScript file using the node/coffee interpreter.
-compile = (srcfile, dstfolder, wrap, callback) ->
-  log("Compiling #{srcfile} to #{dstfolder}", green)
-
-  # prepare the arguments
-  args = ['-c', '-o', dstfolder, srcfile]
-  args.unshift('--no-wrap') if not wrap
-  # spawn the coffee process
-  proc = spawn('coffee', args)
-
-  # handle errors
-  proc.stderr.addListener('data', (buffer) ->
-    log(buffer.toString(), red)
+task 'clean', 'clean the destination directory', (options) ->
+  # Remove the destination directory.
+  util.removeDir(config.dist,
+    ((removedFile) -> log.info("Removed '#{removedFile}'")),
+    ((err)         -> log.error(err))
   )
 
-  # callback on exit
-  proc.addListener('exit', (status) ->
-    [srcdir, srcbase, srcext] = extpath(srcfile)
-    dstfile = path.join(dstfolder, "#{srcbase}.js")
-    callback(status, dstfile)
-  ) if callback?
+task 'build', 'build the source files', (options) ->
+  # Clean the destination directory.
+  invoke 'clean'
+  # Make every file in the source directory.
+  util.mapDir(config.src, config.dist, make)
 
-# Compress a CSS or JavaScript file using yui-compressor.
-compress = (srcfile, dstfile, callback) ->
-  log("Compressing #{srcfile} to #{dstfile}", green)
-
-  # prepare the arguments
-  args = ['-o', dstfile, srcfile]
-  # spawn the yui-compressor process
-  proc = spawn('yui-compressor', args)
-
-  # handle errors
-  proc.stderr.addListener('data', (buffer) ->
-    log(buffer.toString(), red)
-  )
-
-  # callback on exit
-  proc.addListener('exit', (status) ->
-    callback(status, dstfile)
-  ) if callback?
-
-################################################################################
-
-task 'clean', 'clean the destination directory', () ->
-  fs.readdir(config.dst, (err, files) ->
-    files.forEach((afile) ->
-      dstfile = path.join(config.dst, afile)
-      remove(dstfile)
-    ) if files?
-  )
-
-task 'build', 'build the CoffeeScript files', (options) ->
-  fs.readdir(config.src, (err, files) ->
-    files.forEach((afile) ->
-      srcfile = path.join(config.src, afile)
-      [srcdir, srcbase, srcext] = extpath(srcfile)
-
-      switch srcext.substring(1).toLowerCase()
-        when 'js'
-          copy(srcfile, config.dst)
-        when 'coffee'
-          wrap = not srcbase.match(/\.worker$/i)
-          compile(srcfile, config.dst, wrap, (status, dstfile) ->
-            [dstdir, dstbase, dstext] = extpath(dstfile)
-            minfile = path.join(dstdir, "#{dstbase}.min#{dstext}")
-            compress(dstfile, minfile) if status is 0
-          )
-    ) if files?
+task 'watch', 'watch the source files and build them as necessary', (options) ->
+  # Build the source files.
+  invoke 'build'
+  # Watch them so that they get rebuilt when modified.
+  util.mapDir(config.src, config.dist,
+    ((sourceFile, destFile) ->
+      fs.watchFile(sourceFile, { persistent: true, interval: 500 },
+        ((curr, prev) ->
+          return if curr.size is prev.size and curr.mtime.getTime() is prev.mtime.getTime()
+          make(sourceFile, destFile)
+        )
+      )
+    )
   )
 
