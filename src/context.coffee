@@ -20,7 +20,9 @@ init = ->
     chrome.contextMenus.create({
       'title':    chrome.i18n.getMessage(label)
       'contexts': ['image']
-      'onclick':  (info, tab) -> createTab(info.srcUrl, params)
+      'onclick':  ((params) ->
+        (info, tab) -> createTab(info.srcUrl, params)
+      )(params)
     }) if label
 
 createTab = (url, params) ->
