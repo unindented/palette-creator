@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-QUANT_WORKER   = 'scripts/neuquant.worker.min.js'
+QUANT_WORKER   = 'scripts/neuquant.worker.js'
 
 STATE_INITIAL  = 'initial'
 STATE_WAITING  = 'waiting'
