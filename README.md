@@ -1,4 +1,4 @@
-# Palette for Google Chrome ![Still Maintained?](http://stillmaintained.com/unindented/palette-chrome.png)
+# Palette for Google Chrome
 
 Creates a color palette from any image. Just right-click on the image and select the *Palette for Chrome* option.
 
