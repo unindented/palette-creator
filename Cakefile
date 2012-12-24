@@ -1,5 +1,3 @@
-require 'coffee-script'
-
 fs   = require('fs')
 path = require('path')
 exec = require('child_process').exec
@@ -35,7 +33,7 @@ rules =
         log.info("Compiled '#{sourceFile}' to '#{destFile}'")
         # ... and minify it.
         uglifyOpts = []
-        uglifyOpts.push('--overwrite')
+        uglifyOpts.push("--output #{destFile}")
         uglifyCmd = "uglifyjs #{uglifyOpts.join(' ')} #{destFile}"
         run(uglifyCmd, ->
           log.info("Minified '#{destFile}'")
@@ -91,8 +89,8 @@ make = (sourceFile, destFile) ->
 # This function runs a command.
 run = (cmd, callback) ->
   exec(cmd, (err, stdout, stderr) ->
-    log.info(stdout) if stdout
-    log.error(stderr) if stderr
+    log.info(stdout) if stdout && stdout.trim()
+    log.error(stderr) if stderr && stderr.trim()
     #throw err if err?
 
     callback() if callback? and not err?

@@ -19,11 +19,11 @@ fixExtension = (somePath, extension) ->
 mapDir = (sourceDir, destDir, iterator, success, error) ->
   try
     # If the destination exists and is not a directory, throw an error.
-    if path.existsSync(destDir) and not fs.statSync(destDir).isDirectory()
+    if fs.existsSync(destDir) and not fs.statSync(destDir).isDirectory()
       throw "File exists '#{destDir}'"
 
     # If the destination directory doesn't exist...
-    unless path.existsSync(destDir)
+    unless fs.existsSync(destDir)
       # ... create it.
       fs.mkdirSync(destDir, fs.statSync(sourceDir).mode)
       # Success callback with created directory.
@@ -63,11 +63,11 @@ copyFile = (sourceFile, destFile, success, error) ->
 copyDir = (sourceDir, destDir, success, error) ->
   try
     # If the destination exists and is not a directory, throw an error.
-    if path.existsSync(destDir) and not fs.statSync(destDir).isDirectory()
+    if fs.existsSync(destDir) and not fs.statSync(destDir).isDirectory()
       throw "File exists '#{destDir}'"
 
     # If the destination directory doesn't exist...
-    unless path.existsSync(destDir)
+    unless fs.existsSync(destDir)
       # ... create it.
       fs.mkdirSync(destDir, fs.statSync(sourceDir).mode)
       # Success callback with created directory.
@@ -107,11 +107,11 @@ removeFile = (someFile, success, error) ->
 removeDir = (someDir, success, error) ->
   try
     # If it doesn't exist, do nothing.
-    if not path.existsSync(someDir)
+    if not fs.existsSync(someDir)
       return
 
     # If it exists, but is not a directory, throw an error.
-    if path.existsSync(someDir) and not fs.statSync(someDir).isDirectory()
+    if fs.existsSync(someDir) and not fs.statSync(someDir).isDirectory()
       throw "Not a directory '#{someDir}'"
 
     currDir = someDir
