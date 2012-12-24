@@ -11,8 +11,8 @@
 #
 ################################################################################
 
-onmessage = (e) ->
-  data = e.data
+addEventListener('message', (event) ->
+  data = event.data
   if data.type == 'quantize'
     quant = new OctreeQuant()
     palette = quant.quantizeImage(data.pixels, data.colors)
@@ -21,6 +21,7 @@ onmessage = (e) ->
       'type':    'palette',
       'palette': palette
     })
+)
 
 log = (message) ->
   # send the log message to the caller

@@ -27,7 +27,7 @@
 #
 ################################################################################
 
-onmessage = (event) ->
+addEventListener('message', (event) ->
   data = event.data
   switch data.type
     when 'quantize'
@@ -39,6 +39,7 @@ onmessage = (event) ->
         'type':    'palette',
         'palette': quant.getColorMap()
       })
+)
 
 log = (message) ->
   # send the log message to the caller

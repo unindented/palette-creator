@@ -140,7 +140,7 @@ processImage = (image) ->
   # using web workers
   worker = new Worker(QUANT_WORKER)
   # message handler
-  worker.onmessage = ((event) ->
+  worker.addEventListener('message', (event) ->
     data = event.data
     switch data.type
       when 'log'
@@ -150,7 +150,7 @@ processImage = (image) ->
         setState(STATE_LOADED)
   )
   # error handler
-  worker.onerror = ((event) ->
+  worker.addEventListener('error', (event) ->
     throw new Error("#{event.message} (#{event.filename}:#{event.lineno})")
   )
 
