@@ -5,7 +5,7 @@
 
   "name":        "__MSG_ext_name__",
   "description": "__MSG_ext_description__",
-  "version":     "1.5.2",
+  "version":     "1.6.0",
 
   "minimum_chrome_version": "6.0",
 
@@ -26,3 +26,4 @@
     "page": "background.html"
   }
 }
+
