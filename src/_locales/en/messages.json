@@ -1,0 +1,145 @@
+{
+  "locale": {
+    "message": "en"
+  },
+  "ext_name": {
+    "message": "Palette Creator"
+  },
+  "ext_description": {
+    "message": "Creates a color palette from any image. Just right-click on the image and select the 'Palette Creator' option."
+  },
+
+  "menu_palette": {
+    "message": "Create palette from image"
+  },
+  "menu_palette_8": {
+    "message": "Create 8-color palette"
+  },
+  "menu_palette_16": {
+    "message": "Create 16-color palette"
+  },
+  "menu_palette_24": {
+    "message": "Create 24-color palette"
+  },
+  "menu_palette_32": {
+    "message": "Create 32-color palette"
+  },
+  "menu_palette_custom": {
+    "message": "Create custom palette..."
+  },
+
+  "msg_format_rgb": {
+    "message": "RGB"
+  },
+  "msg_format_hsl": {
+    "message": "HSL"
+  },
+  "msg_format_hsv": {
+    "message": "HSV"
+  },
+  "msg_format_hwb": {
+    "message": "HWB"
+  },
+  "msg_format_cmyk": {
+    "message": "CMYK"
+  },
+  "msg_format_xyz": {
+    "message": "XYZ"
+  },
+  "msg_format_lab": {
+    "message": "LAB"
+  },
+  "msg_format_lch": {
+    "message": "LCH"
+  },
+  "msg_format_hex": {
+    "message": "HEX"
+  },
+
+  "msg_header_about": {
+    "message": "About..."
+  },
+
+  "msg_image_title": {
+    "message": "Source image"
+  },
+  "msg_image_state_loading": {
+    "message": "Loading..."
+  },
+  "msg_image_state_quantizing": {
+    "message": "Quantizing vectors..."
+  },
+  "msg_image_state_finished": {
+    "message": "Finished!"
+  },
+
+  "msg_colors_title": {
+    "message": "Generated palette"
+  },
+  "msg_colors_error": {
+    "message": "Could not load image. Maybe the site $SITE$ blocked the request?",
+    "placeholders": {
+      "site": {
+        "content": "$1"
+      }
+    }
+  },
+
+  "msg_settings_button_label": {
+    "message": "Settings"
+  },
+
+  "msg_copy_button_label": {
+    "message": "Copy"
+  },
+  "msg_copy_button_snackbar": {
+    "message": "Copied all colors to your clipboard."
+  },
+
+  "msg_download_button_label": {
+    "message": "Download"
+  },
+  "msg_download_button_snackbar": {
+    "message": "Generated palette file with all colors."
+  },
+
+  "msg_settings_dialog_title": {
+    "message": "Palette size: $SIZE$",
+    "placeholders": {
+      "size": {
+        "content": "$1"
+      }
+    }
+  },
+  "msg_settings_dialog_netsize_label": {
+    "message": "Colors"
+  },
+  "msg_settings_dialog_submit_button": {
+    "message": "Create"
+  },
+
+  "msg_about_dialog_author_label": {
+    "message": "Developed with love by $AUTHOR$.",
+    "placeholders": {
+      "author": {
+        "content": "$1"
+      }
+    }
+  },
+  "msg_about_dialog_donate_label": {
+    "message": "If this extension has been useful to you, would you consider a gift of $$5 to support my work on free and open source software?"
+  },
+  "msg_about_dialog_donate_url": {
+    "message": "https://paypal.me/unindented/5usd"
+  },
+  "msg_about_dialog_close_button": {
+    "message": "Close"
+  },
+  "msg_about_dialog_donate_button": {
+    "message": "Donate $$5"
+  },
+
+  "msg_options_analytics_label": {
+    "message": "Send anonymized usage statistics and crash reports"
+  }
+}

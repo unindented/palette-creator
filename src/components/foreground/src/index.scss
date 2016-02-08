@@ -1,0 +1,31 @@
+.app-layout {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.app-layout__container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+  background-color: $layout-background-color;
+}
+
+.app-layout__container .mdl-layout-title .material-icons {
+  position: relative;
+  top: 2px;
+  margin-right: 8px;
+  font-size: inherit;
+}
+
+.app-layout .mdl-layout__content {
+  padding-top: 48px;
+}
+
+.app-layout .mdl-snackbar[style] {
+  margin-left: 0 !important;
+}

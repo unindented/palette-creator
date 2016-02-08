@@ -1,0 +1,51 @@
+.app-colors.mdl-card {
+  width: 640px;
+  min-height: 0;
+  margin: 48px auto;
+  overflow: visible;
+}
+
+.app-colors > .mdl-card__supporting-text {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app-colors > .mdl-card__actions {
+  position: relative;
+  display: flex;
+}
+
+.app-colors > .mdl-card__actions > :first-child {
+  margin-right: auto;
+}
+
+.app-colors__list {
+  padding: 0;
+  margin: 0;
+}
+
+.app-colors__list-item {
+  display: inline-block;
+  width: 25%;
+}
+
+.app-colors__list-item-color,
+.app-colors__list-item-info {
+  margin: 12px;
+}
+
+.app-colors__list-item-color {
+  height: 28px;
+}
+
+.app-colors__list-item-info {
+  text-align: center;
+
+  @include typo-caption;
+}
+
+.app-colors__spinner,
+.app-colors__error {
+  color: $error-text-color;
+  text-align: center;
+}

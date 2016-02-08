@@ -1,0 +1,2 @@
+describe('Analytics', function () {
+})

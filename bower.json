@@ -1,0 +1,9 @@
+{
+  "name": "palette-creator",
+  "description": "Browser extension that creates a color palette from any image.",
+  "license": "GPL-3.0",
+  "private": true,
+  "dependencies": {
+    "chrome-platform-analytics": "^1.3.0"
+  }
+}

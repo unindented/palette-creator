@@ -1,0 +1,145 @@
+{
+  "locale": {
+    "message": "es"
+  },
+  "ext_name": {
+    "message": "Palette Creator"
+  },
+  "ext_description": {
+    "message": "Crea una paleta de colores a partir de cualquier imagen. Simplemente haz click derecho sobre la imagen y selecciona la opción 'Palette Creator'."
+  },
+
+  "menu_palette": {
+    "message": "Crear paleta a partir de imagen"
+  },
+  "menu_palette_8": {
+    "message": "Crear paleta de 8 colores"
+  },
+  "menu_palette_16": {
+    "message": "Crear paleta de 16 colores"
+  },
+  "menu_palette_24": {
+    "message": "Crear paleta de 24 colores"
+  },
+  "menu_palette_32": {
+    "message": "Crear paleta de 32 colores"
+  },
+  "menu_palette_custom": {
+    "message": "Crear paleta personalizada..."
+  },
+
+  "msg_format_rgb": {
+    "message": "RGB"
+  },
+  "msg_format_hsl": {
+    "message": "HSL"
+  },
+  "msg_format_hsv": {
+    "message": "HSV"
+  },
+  "msg_format_hwb": {
+    "message": "HWB"
+  },
+  "msg_format_cmyk": {
+    "message": "CMYK"
+  },
+  "msg_format_xyz": {
+    "message": "XYZ"
+  },
+  "msg_format_lab": {
+    "message": "LAB"
+  },
+  "msg_format_lch": {
+    "message": "LCH"
+  },
+  "msg_format_hex": {
+    "message": "HEX"
+  },
+
+  "msg_header_about": {
+    "message": "Información..."
+  },
+
+  "msg_image_title": {
+    "message": "Imagen original"
+  },
+  "msg_image_state_loading": {
+    "message": "Cargando..."
+  },
+  "msg_image_state_quantizing": {
+    "message": "Cuantizando vectores..."
+  },
+  "msg_image_state_finished": {
+    "message": "¡Terminado!"
+  },
+
+  "msg_colors_title": {
+    "message": "Paleta generada"
+  },
+  "msg_colors_error": {
+    "message": "No se pudo cargar la imagen. ¿Puede que el sitio $SITE$ haya bloqueado la petición?",
+    "placeholders": {
+      "site": {
+        "content": "$1"
+      }
+    }
+  },
+
+  "msg_settings_button_label": {
+    "message": "Ajustes"
+  },
+
+  "msg_copy_button_label": {
+    "message": "Copiar"
+  },
+  "msg_copy_button_snackbar": {
+    "message": "Copiados todos los colores a su portapapeles."
+  },
+
+  "msg_download_button_label": {
+    "message": "Descargar"
+  },
+  "msg_download_button_snackbar": {
+    "message": "Generado archivo de paleta con todos los colores."
+  },
+
+  "msg_settings_dialog_title": {
+    "message": "Tamaño de paleta: $SIZE$",
+    "placeholders": {
+      "size": {
+        "content": "$1"
+      }
+    }
+  },
+  "msg_settings_dialog_netsize_label": {
+    "message": "Colores"
+  },
+  "msg_settings_dialog_submit_button": {
+    "message": "Crear"
+  },
+
+  "msg_about_dialog_author_label": {
+    "message": "Desarrollado con cariño por $AUTHOR$.",
+    "placeholders": {
+      "author": {
+        "content": "$1"
+      }
+    }
+  },
+  "msg_about_dialog_donate_label": {
+    "message": "Si esta extensión te ha sido de ayuda, ¿considerarías donar 5€ para apoyar mi trabajo en software libre y de código abierto?"
+  },
+  "msg_about_dialog_donate_url": {
+    "message": "https://paypal.me/unindented/5eur"
+  },
+  "msg_about_dialog_close_button": {
+    "message": "Cerrar"
+  },
+  "msg_about_dialog_donate_button": {
+    "message": "Donar 5€"
+  },
+
+  "msg_options_analytics_label": {
+    "message": "Enviar estadísticas de uso e informes sobre fallos anónimamente"
+  }
+}

@@ -1,0 +1,20 @@
+.app-image.mdl-card {
+  width: 384px;
+  height: 256px;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.app-image > .mdl-card__supporting-text {
+  display: none;
+}
+
+.app-image > .mdl-card__actions {
+  text-align: center;
+  background-color: $image-message-background-color;
+}
+
+.app-image__message {
+  color: $image-message-text-color;
+}

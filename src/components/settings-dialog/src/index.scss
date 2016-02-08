@@ -1,0 +1,22 @@
+.app-settings-dialog.mdl-dialog {
+  width: 384px;
+  color: $text-color-primary;
+}
+
+.app-settings-dialog .mdl-dialog__title {
+  @include typo-title($usePreferred: false);
+}
+
+.app-settings-dialog__field {
+  display: flex;
+  text-align: end;
+}
+.app-settings-dialog__field > label {
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-settings-dialog__field > div {
+  flex: 1;
+}

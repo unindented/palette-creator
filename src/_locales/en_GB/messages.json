@@ -1,0 +1,15 @@
+{
+  "locale": {
+    "message": "en_GB"
+  },
+
+  "msg_about_dialog_donate_label": {
+    "message": "If this extension has been useful to you, would you consider a gift of £5 to support my work on free and open source software?"
+  },
+  "msg_about_dialog_donate_url": {
+    "message": "https://paypal.me/unindented/5gbp"
+  },
+  "msg_about_dialog_donate_button": {
+    "message": "Donate £5"
+  }
+}

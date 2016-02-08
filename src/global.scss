@@ -1,0 +1,18 @@
+@import "~mdl/src/color-definitions";
+@import "~mdl/src/functions";
+@import "~mdl/src/mixins";
+
+$color-primary: $palette-teal-500;
+$color-primary-dark: $palette-teal-700;
+$color-primary-light: $palette-teal-50;
+$color-accent: $palette-blue-grey-500;
+$color-primary-contrast: $color-dark-contrast;
+$color-accent-contrast: $color-dark-contrast;
+
+@import "~mdl/src/variables";
+
+$layout-background-color: unquote("rgb(#{$color-primary-light})");
+$card-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.6)");
+$image-message-background-color: unquote("rgba(#{$color-black}, 0.26)");
+$image-message-text-color: unquote("rgb(#{$color-primary-contrast})");
+$error-text-color: unquote("rgb(#{$palette-red-A700})");
