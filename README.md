@@ -1,3 +1,5 @@
+![Palette Creator](src/assets/promo_1400.png)
+
 # Palette Creator [![Build Status](https://img.shields.io/travis/unindented/palette-creator.svg)](http://travis-ci.org/unindented/palette-creator) [![Dependency Status](https://img.shields.io/gemnasium/unindented/palette-creator.svg)](https://gemnasium.com/unindented/palette-creator) [![Coverage Status](https://img.shields.io/coveralls/unindented/palette-creator.svg)](https://coveralls.io/r/unindented/palette-creator)
 
 Creates a color palette from any image. Just right-click on the image and select the *Palette Creator* option.
