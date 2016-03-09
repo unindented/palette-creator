@@ -4,6 +4,8 @@
 
 Creates a color palette from any image. Just right-click on the image and select the *Palette Creator* option.
 
+![Right-click on an image...](src/assets/screenshot_small_1.png) ![And get your palette of colors!](src/assets/screenshot_small_2.png)
+
 
 ## Description
 
