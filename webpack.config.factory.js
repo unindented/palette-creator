@@ -1,11 +1,14 @@
 'use strict'
 
 var path = require('path')
+var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = function (options) {
   options = options || {}
+
+  var optimize = (options.environment === 'production')
 
   return {
     entry: {
@@ -16,7 +19,7 @@ module.exports = function (options) {
 
     output: {
       path: './dist/' + options.platform,
-      pathinfo: true,
+      pathinfo: !optimize,
       filename: '[name].js'
     },
 
@@ -143,8 +146,20 @@ module.exports = function (options) {
     },
 
     plugins: [
-      new ExtractTextPlugin('[name].css')
-    ],
+      new ExtractTextPlugin('[name].css'),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify(options.environment)
+        }
+      })
+    ].concat(optimize ? [
+      new webpack.optimize.UglifyJsPlugin({
+        compressor: {
+          screw_ie8: true,
+          warnings: false
+        }
+      })
+    ] : []),
 
     postcss: [
       autoprefixer({browsers: 'Chrome >= 43'})
