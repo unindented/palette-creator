@@ -12,8 +12,5 @@
     "browser": true,
     "worker": true,
     "jasmine": true
-  },
-  "globals": {
-    "chrome": true
   }
 }

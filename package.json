@@ -28,7 +28,7 @@
     "watch:chrome": "webpack -w --config webpack.config.chrome.js",
     "watch:firefox": "webpack -w --config webpack.config.firefox.js",
     "watch:karma": "karma start",
-    "watch": "npm run build && npm-run-all --parallel watch:*",
+    "watch": "npm run clean && npm-run-all --parallel watch:*",
     "build:chrome": "webpack --config webpack.config.chrome.min.js",
     "build:firefox": "webpack --config webpack.config.firefox.min.js",
     "build": "npm run clean && npm-run-all --parallel build:*",

@@ -1,3 +1,5 @@
+import {getItems, setItems} from 'utils/platform'
+
 export const minSamplefac = 1
 export const maxSamplefac = 30
 export const defaultSamplefac = 1
@@ -10,32 +12,19 @@ export const formats = ['rgb', 'hsl', 'hsv', 'hwb', 'cmyk', 'xyz', 'lab', 'lch',
 export const defaultFormat = 'hex'
 
 const defaults = {
-  format: defaultFormat
+  format: defaultFormat,
+  samplefac: defaultSamplefac,
+  netsize: defaultNetsize
 }
 
-export function removeSettings () {
-  try {
-    localStorage.removeItem('settings')
-  } catch (e) {
-  }
+export function defaultSettings () {
+  return defaults
 }
 
-export function loadSettings () {
-  let settings
-
-  try {
-    settings = JSON.parse(localStorage.getItem('settings'))
-  } catch (e) {
-    removeSettings()
-  }
-
-  return Object.assign({}, defaults, settings)
+export function loadSettings (callback) {
+  getItems(defaultSettings(), callback)
 }
 
-export function saveSettings (settings) {
-  try {
-    localStorage.setItem('settings', JSON.stringify(Object.assign(loadSettings(), settings)))
-  } catch (e) {
-    removeSettings()
-  }
+export function saveSettings (settings, callback) {
+  setItems(settings, callback)
 }
