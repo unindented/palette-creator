@@ -6,7 +6,7 @@
     "message": "Palette Creator"
   },
   "ext_description": {
-    "message": "Crea una paleta de colores a partir de cualquier imagen. Simplemente haz click derecho sobre la imagen y selecciona la opción 'Palette Creator'."
+    "message": "Crea una paleta de colores a partir de cualquier imagen. Simplemente haz click derecho sobre la imagen y selecciona la opción “Palette Creator”."
   },
 
   "menu_palette": {
@@ -139,6 +139,9 @@
     "message": "Donar 5€"
   },
 
+  "msg_options_instructions_label": {
+    "message": "Para usar esta extensión, simplemente haz click derecho sobre una imagen, selecciona la opción “Palette Creator”, y elige el número de colores que quieres que tenga tu paleta."
+  },
   "msg_options_analytics_label": {
     "message": "Enviar estadísticas de uso e informes sobre fallos anónimamente"
   }

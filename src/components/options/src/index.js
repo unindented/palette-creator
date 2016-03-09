@@ -28,6 +28,9 @@ export default class Options extends Component {
 
     return (
       <div className='app-options'>
+        <p>
+          <i>{t('msg_options_instructions_label')}</i>
+        </p>
         <label className='app-options__option'>
           <input type='checkbox' id='app-options-analytics' className='app-options__checkbox'
             checked={trackingPermitted}

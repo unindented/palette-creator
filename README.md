@@ -11,7 +11,7 @@ Creates a color palette from any image. Just right-click on the image and select
 
 Do you want to create a color palette that matches an image from your website? Or maybe you just want to grab some colors for inspiration? Then this is the extension for you!
 
-Just right click on the desired image, select the *Palette Creator* option, and choose the number of colors you want the palette to have.
+Just right-click on the desired image, select the *Palette Creator* option, and choose the number of colors you want the palette to have.
 
 A new tab will open, displaying the image and the resulting color palette. It's that easy!
 

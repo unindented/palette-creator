@@ -6,7 +6,7 @@
     "message": "Palette Creator"
   },
   "ext_description": {
-    "message": "Creates a color palette from any image. Just right-click on the image and select the 'Palette Creator' option."
+    "message": "Creates a color palette from any image. Just right-click on the image and select the “Palette Creator” option."
   },
 
   "menu_palette": {
@@ -139,6 +139,9 @@
     "message": "Donate $$5"
   },
 
+  "msg_options_instructions_label": {
+    "message": "In order to use this extension, just right-click on an image, select the “Palette Creator” option, and choose the number of colors you want the palette to have."
+  },
   "msg_options_analytics_label": {
     "message": "Send anonymized usage statistics and crash reports"
   }
