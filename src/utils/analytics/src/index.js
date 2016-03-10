@@ -38,5 +38,5 @@ export function trackTiming (category, variable, value, label, rate) {
 }
 
 export function trackException (err, fatal) {
-  tracker && tracker.sendException(err.message, fatal)
+  tracker && err && tracker.sendException(err.message, fatal)
 }
