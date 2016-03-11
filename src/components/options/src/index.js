@@ -32,7 +32,7 @@ export default class Options extends Component {
           <i>{t('msg_options_instructions_label')}</i>
         </p>
         <label className='app-options__option'>
-          <input type='checkbox' id='app-options-analytics' className='app-options__checkbox'
+          <input type='checkbox' className='app-options__checkbox'
             checked={trackingPermitted}
             onChange={this.handleChangeAnalytics}
           />
