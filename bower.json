@@ -4,6 +4,6 @@
   "license": "GPL-3.0",
   "private": true,
   "dependencies": {
-    "chrome-platform-analytics": "^1.3.0"
+    "chrome-platform-analytics": "=1.3.0"
   }
 }
