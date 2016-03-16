@@ -7,3 +7,6 @@ script:
 
 after_script:
   - 'find ./coverage -name lcov.info -exec cat {} \; | ./node_modules/.bin/coveralls'
+  - 'npm run build'
+  - 'sha256sum ./dist/chrome/*'
+  - 'sha256sum ./dist/firefox/*'
