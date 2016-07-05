@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import {autobind} from 'core-decorators'
 import {t} from 'utils/i18n'
 import {isTrackingPermitted, setTrackingPermitted} from 'utils/analytics'

@@ -1,3 +1,4 @@
+import React from 'react'
 import Colors from 'components/colors'
 import {render} from 'utils/test'
 

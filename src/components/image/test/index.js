@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'components/image'
 import {render} from 'utils/test'
 import fixture from './image.svg'

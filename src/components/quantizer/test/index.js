@@ -1,3 +1,4 @@
+import React from 'react'
 import Quantizer from 'components/quantizer'
 import {render} from 'utils/test'
 import fixture from './image.svg'

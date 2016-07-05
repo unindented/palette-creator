@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Card, CardTitle, CardText, CardActions, Spinner} from 'react-mdl'
 import {autobind} from 'core-decorators'
 import classNames from 'classnames'

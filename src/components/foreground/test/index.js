@@ -1,3 +1,4 @@
+import React from 'react'
 import Foreground from 'components/foreground'
 import {render} from 'utils/test'
 

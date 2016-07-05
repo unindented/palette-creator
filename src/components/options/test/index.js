@@ -1,3 +1,4 @@
+import React from 'react'
 import Options from 'components/options'
 import {render} from 'utils/test'
 

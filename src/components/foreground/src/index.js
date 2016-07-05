@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Header, Icon, Navigation, Content, Snackbar} from 'react-mdl'
 import {autobind} from 'core-decorators'
 import defaults from 'lodash/defaults'

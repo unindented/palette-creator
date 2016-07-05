@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Button} from 'react-mdl'
 import {autobind} from 'core-decorators'
 import {t} from 'utils/i18n'

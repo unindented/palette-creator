@@ -1,3 +1,4 @@
+import React from 'react'
 import AboutDialog from 'components/about-dialog'
 import {render} from 'utils/test'
 

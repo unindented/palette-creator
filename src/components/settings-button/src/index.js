@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Button, Menu, MenuItem} from 'react-mdl'
 import {t} from 'utils/i18n'
 import {formats} from 'utils/settings'

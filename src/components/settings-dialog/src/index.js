@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Button, Dialog, DialogTitle, DialogContent, DialogActions, Slider} from 'react-mdl'
 import {autobind} from 'core-decorators'
 import dialogPolyfill from 'dialog-polyfill'

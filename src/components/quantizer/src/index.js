@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {extractPixels} from 'utils/palette'
 import {validateProps} from 'utils/validate'
 import Worker from './worker'

@@ -1,3 +1,4 @@
+import React from 'react'
 import {createMemoryHistory} from 'react-router'
 import App from 'components/app'
 import {render} from 'utils/test'

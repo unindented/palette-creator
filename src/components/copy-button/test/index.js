@@ -1,3 +1,4 @@
+import React from 'react'
 import CopyButton from 'components/copy-button'
 import {render} from 'utils/test'
 

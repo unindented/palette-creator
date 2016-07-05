@@ -1,3 +1,4 @@
+import React from 'react'
 import SettingsButton from 'components/settings-button'
 import {formats} from 'utils/settings'
 import {render, Simulate} from 'utils/test'

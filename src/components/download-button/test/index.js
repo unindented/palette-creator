@@ -1,3 +1,4 @@
+import React from 'react'
 import DownloadButton from 'components/download-button'
 import {render, Simulate} from 'utils/test'
 

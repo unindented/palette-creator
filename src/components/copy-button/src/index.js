@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Button} from 'react-mdl'
 import {autobind} from 'core-decorators'
 import copy from 'copy-to-clipboard'
@@ -33,7 +33,7 @@ export default class CopyButton extends Component {
     const {format, image, palette} = this.props
     const error = image instanceof Error
     const colors = palette || []
-    const text = colors.map(stringifyColor.bind(null, format)).join(', ')
+    const text = colors.map((color) => stringifyColor(format, color)).join(', ')
 
     const isCopySupported = document.queryCommandSupported('copy')
 

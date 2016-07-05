@@ -1,4 +1,4 @@
-import {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Router, Route} from 'react-router'
 import Foreground from 'components/foreground'
 
