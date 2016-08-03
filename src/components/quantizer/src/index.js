@@ -32,7 +32,7 @@ export default class Quantizer extends Component {
     }
 
     return (
-      <div className='app-quantizer hidden' />
+      <div className="app-quantizer hidden" />
     )
   }
 }

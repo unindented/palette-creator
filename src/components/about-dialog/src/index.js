@@ -48,11 +48,11 @@ export default class AboutDialog extends Component {
     const isOpen = this.hasDialog() && !!open
 
     return (
-      <Dialog className='app-about-dialog' open={isOpen}
+      <Dialog className="app-about-dialog" open={isOpen}
         ref={this.handleDialogRef}
         onCancel={this.handleClose}
       >
-        <form method='dialog'>
+        <form method="dialog">
           <DialogTitle>
             {`${t('ext_name')} v${pkg.version}`}
           </DialogTitle>
@@ -65,7 +65,7 @@ export default class AboutDialog extends Component {
             </p>
           </DialogContent>
           <DialogActions>
-            <Button type='submit' colored raised ripple
+            <Button type="submit" colored raised ripple
               onClick={this.handleDonate}
             >
               {t('msg_about_dialog_donate_button')}

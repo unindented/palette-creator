@@ -14,7 +14,7 @@ export default class App extends Component {
 
     return (
       <Router history={history}>
-        <Route path='/foreground.html' component={Foreground} />
+        <Route path="/foreground.html" component={Foreground} />
       </Router>
     )
   }
