@@ -38,14 +38,14 @@ export default class CopyButton extends Component {
     const isCopySupported = document.queryCommandSupported('copy')
 
     return (
-      <div className="app-copy-button">
+      <div className='app-copy-button'>
         <Button colored ripple
           disabled={!!error || !colors.length || !isCopySupported}
           onClick={this.handleClick}
         >
           {t('msg_copy_button_label')}
         </Button>
-        <input type="hidden" value={text}
+        <input type='hidden' value={text}
           ref={this.handleInputRef}
         />
       </div>

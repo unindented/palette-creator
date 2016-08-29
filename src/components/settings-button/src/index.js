@@ -32,13 +32,13 @@ export default class SettingsButton extends Component {
     const error = image instanceof Error
 
     return (
-      <div className="app-settings-button">
-        <Button id="app-settings-button" colored ripple
+      <div className='app-settings-button'>
+        <Button id='app-settings-button' colored ripple
           disabled={!!error}
         >
           {t('msg_settings_button_label')}
         </Button>
-        <Menu target="app-settings-button" valign="top">
+        <Menu target='app-settings-button' valign='top'>
           {formats.map((format) => (
             <MenuItem key={format}
               onClick={this._handleChangeFormatMap[format]}

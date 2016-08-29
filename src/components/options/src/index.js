@@ -27,16 +27,16 @@ export default class Options extends Component {
     const {trackingPermitted} = this.state
 
     return (
-      <div className="app-options">
+      <div className='app-options'>
         <p>
           <i>{t('msg_options_instructions_label')}</i>
         </p>
-        <label className="app-options__option">
-          <input type="checkbox" className="app-options__checkbox"
+        <label className='app-options__option'>
+          <input type='checkbox' className='app-options__checkbox'
             checked={trackingPermitted}
             onChange={this.handleChangeAnalytics}
           />
-          <span className="app-options__label">
+          <span className='app-options__label'>
             {t('msg_options_analytics_label')}
           </span>
         </label>

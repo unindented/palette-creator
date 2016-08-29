@@ -55,28 +55,28 @@ export default class Colors extends Component {
     return (
       <Card className={classNames('app-colors', {hidden: !isReady})} shadow={2}>
         <CardTitle>
-          <span className="visuallyhidden">
+          <span className='visuallyhidden'>
             {t('msg_colors_title')}
           </span>
         </CardTitle>
         <CardText>
           {!loaded && !error && (
-            <div className="app-colors__spinner">
+            <div className='app-colors__spinner'>
               <Spinner />
             </div>
           )}
           {!loaded && !!error && (
-            <p className="app-colors__error">
+            <p className='app-colors__error'>
               {t('msg_colors_error', host)}
             </p>
           )}
-          <ul className="app-colors__list">
+          <ul className='app-colors__list'>
             {colors.map((color) => (
-              <li key={color.join(', ')} className="app-colors__list-item">
-                <div className="app-colors__list-item-color"
+              <li key={color.join(', ')} className='app-colors__list-item'>
+                <div className='app-colors__list-item-color'
                   style={{backgroundColor: `rgb(${color.join(', ')})`}}
                 />
-                <div className="app-colors__list-item-info">
+                <div className='app-colors__list-item-info'>
                   {t(`msg_format_${format}`) + ': '}
                   {stringifyColor(format, color)}
                 </div>

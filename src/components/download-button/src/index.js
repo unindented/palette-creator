@@ -36,14 +36,14 @@ export default class DownloadButton extends Component {
     const download = 'palette.gpl'
 
     return (
-      <div className="app-download-button">
+      <div className='app-download-button'>
         <Button colored ripple
           disabled={!!error || !colors.length}
           onClick={this.handleClick}
         >
           {t('msg_download_button_label')}
         </Button>
-        <a className="visuallyhidden" href={href} download={download}
+        <a className='visuallyhidden' href={href} download={download}
           ref={this.handleLinkRef}
         />
       </div>

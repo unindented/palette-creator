@@ -50,7 +50,7 @@ describe('Quantizer', function () {
     beforeEach(function (done) {
       const img = document.createElement('img')
       img.onload = () => {
-        this.element = render(<Quantizer load format="hex" samplefac={1} netsize={16} image={img} />)
+        this.element = render(<Quantizer load format='hex' samplefac={1} netsize={16} image={img} />)
         done()
       }
       img.src = fixture
