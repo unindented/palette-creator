@@ -35,12 +35,12 @@ export default class AboutDialog extends Component {
   }
 
   hasDialog () {
-    const dialog = this._dialog && this._dialog.refs.dialog
+    const dialog = this._dialog && this._dialog.dialogRef
     return (dialog instanceof Node) && document.contains(dialog)
   }
 
   componentDidMount () {
-    dialogPolyfill.registerDialog(this._dialog.refs.dialog)
+    dialogPolyfill.registerDialog(this._dialog.dialogRef)
   }
 
   render () {
