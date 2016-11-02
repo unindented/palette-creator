@@ -1,5 +1,5 @@
-import _shim from 'es6-shim'
-import jqueryMatchers from 'jasmine-jquery-matchers'
+import 'es6-shim'
+import * as jqueryMatchers from 'jasmine-jquery-matchers'
 
 beforeEach(function () {
   jasmine.addMatchers(jqueryMatchers)
