@@ -102,7 +102,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.2",
     "node-libs-browser": "^2.0.0",
-    "node-sass": "^4.0.0",
+    "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.1",
     "phantomjs-prebuilt": "^2.1.14",
     "postcss-loader": "^1.2.1",
