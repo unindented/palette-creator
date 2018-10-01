@@ -37,13 +37,6 @@ export default class Foreground extends Component {
   }
 
   @autobind
-  handleAboutDonate (url) {
-    trackEvent('About', 'Donate', url)
-
-    this.setState({about: false})
-  }
-
-  @autobind
   handleAboutClose () {
     trackEvent('About', 'Close')
 
@@ -171,7 +164,6 @@ export default class Foreground extends Component {
         />
         <AboutDialog {...childProps}
           open={showAbout}
-          onDonate={this.handleAboutDonate}
           onClose={this.handleAboutClose}
         />
       </div>

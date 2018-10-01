@@ -118,25 +118,11 @@
     "message": "Crear"
   },
 
-  "msg_about_dialog_author_label": {
-    "message": "Desarrollado con cariño por $AUTHOR$.",
-    "placeholders": {
-      "author": {
-        "content": "$1"
-      }
-    }
-  },
-  "msg_about_dialog_donate_label": {
-    "message": "Si esta extensión te ha sido de ayuda, ¿considerarías donar 5€ para apoyar mi trabajo en software libre y de código abierto?"
-  },
-  "msg_about_dialog_donate_url": {
-    "message": "https://paypal.me/unindented/5eur"
+  "msg_about_dialog_haiku_label": {
+    "message": "An afternoon breeze\nexpels cold air, along with\nthe fallen brown leaves."
   },
   "msg_about_dialog_close_button": {
     "message": "Cerrar"
-  },
-  "msg_about_dialog_donate_button": {
-    "message": "Donar 5€"
   },
 
   "msg_options_instructions_label": {

@@ -10,22 +10,12 @@ import _styles from './index.scss'
 export default class AboutDialog extends Component {
   static propTypes = {
     open: PropTypes.bool,
-    onDonate: PropTypes.func,
     onClose: PropTypes.func
   }
 
   @autobind
   handleDialogRef (dialog) {
     this._dialog = dialog
-  }
-
-  @autobind
-  handleDonate () {
-    const url = t('msg_about_dialog_donate_url')
-    window.open(url, '_blank')
-
-    const {onDonate} = this.props
-    onDonate && onDonate(url)
   }
 
   @autobind
@@ -58,18 +48,10 @@ export default class AboutDialog extends Component {
           </DialogTitle>
           <DialogContent>
             <p>
-              {t('msg_about_dialog_author_label', pkg.author.name)}
-            </p>
-            <p>
-              {t('msg_about_dialog_donate_label')}
+              {t('msg_about_dialog_haiku_label')}
             </p>
           </DialogContent>
           <DialogActions>
-            <Button type='submit' colored raised ripple
-              onClick={this.handleDonate}
-            >
-              {t('msg_about_dialog_donate_button')}
-            </Button>
             <Button raised ripple
               onClick={this.handleClose}
             >
